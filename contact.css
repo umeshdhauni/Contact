@@ -1,0 +1,133 @@
+@font-face{
+	font-family:'Lobster';
+	src:url(fonts/Lobster-Regular.ttf) format('truetype');
+}
+h1,h2{
+	font-family: 'Lobster', cursive;
+}
+
+.mid-section{
+	padding-top: 30px;
+}
+
+ul {
+list-style: none;
+padding-left: 0;
+padding: 10px;
+}
+
+.contact-name-list li {
+line-height: 32px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+cursor: pointer;
+}
+
+.contact-name-list li:hover{
+border-bottom: 2px solid skyblue;
+}
+
+.app-title {
+font-size: 45px;
+margin-left: 20px;
+color:white;
+text-shadow: 2px 3px 3px #000000;
+filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+
+.app-header{
+	background-color:#009933;
+	padding: 8px 0px 8px 0px;
+	box-shadow: 0 3px 8px 0 
+	rgba(0,0,0,0.9);
+	margin-top: -20px;
+}
+.row{
+	width: 100%;
+}
+
+.app-footer{
+	background-color:#009933;
+	padding: 1px 0px 12px 0px;
+	margin-top: 237px;
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+	padding-left: 25%;
+}
+
+.fa-user{
+	font-size: 22px;
+	cursor: pointer;
+	margin-left: 25%;
+	border: 5px solid #1F1F1F;
+	border-radius: 10px;
+	padding: 10px 15px 10px 15px;
+	color: #1F1F1F;
+}
+.search-bar{
+	outline: none;
+	border:2px solid #4D4D4D;
+	padding: 6px 15px 6px 10px;
+	margin-left: 120px;
+	font-size: 17px;
+	margin-top: 28px;
+}
+
+.contact-image{
+	width: 200px;
+	height: 150px;
+}
+
+.newcontact-form input[type=text]{
+	border: none;
+	border-bottom: 2px solid black;
+	padding-top: 25px;
+	padding-bottom: 5px;
+	width: 70%; 
+	outline: none;
+}
+.newcontact-form{
+	padding-left: 20%;
+}
+.newcontact-form input[type=file]{
+	margin-top: 30px;
+}
+
+.completedetail-section{
+	box-shadow: 0 3px 8px 0 
+	rgba(0,0,0,0.9);
+	margin-top: 35px;
+	line-height: 32px;
+	width: 90%;
+	padding: 10px;
+}
+.personalinfo-top h3{
+	text-align: center;
+	font-family: 'Lobster';
+}
+.contact-image{
+	margin-left: 28.8%;
+	margin-top: 20px;
+}
+.personalinfo-top{
+	border-bottom:1px solid #949494;
+	padding-bottom: 30px;
+}
+.phone-info{
+	margin-top: 10px;
+}
+.completedetail-section{
+	opacity: 0;
+}
+.edit-delete .fa{
+	font-size: 20px;
+	float: right;
+	cursor: pointer;
+}
+.fa-edit{
+	margin-top: -20px;
+}
+.fa-trash-o{
+	margin-right: 40px;
+	margin-top: -22px;
+
+}

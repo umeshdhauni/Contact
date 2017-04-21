@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="contactApp">
+  <head>
+    <title>Angular</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+    <script type="text/javascript" src="lib/js/angular.min.js"></script>
+    <script type="text/javascript" src="contact.js"></script>
+    <link rel="stylesheet" type="text/css" href="contact.css">
+  </head>
+  <body ng-controller="contactController">
+    <header class="app-header">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="app-title">{{appTitle}}</h1>  
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="search-bar input-lg" placeholder="Search the Contact" ng-model="nameSearch">
+        </div>
+      </div>
+    </header>
+    <section class="mid-section">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-5">
+           <center><h3>Contacts</h3></center>
+           <ul class="contact-name-list">
+             <li ng-repeat="contact in contacts|filter:nameSearch track by $index" ng-click="completeDetails($index)">
+               <p>{{contact.name}}</p>
+             </li>
+           </ul>             
+        </div>
+        <div class="col-md-offset-1 col-md-5">
+          <section class="completedetail-section">
+            <div class="personalinfo-top">
+              <h3>{{cd_contactname}}</h3>
+              <img src="{{cd_image}}" class="contact-image">
+            </div>
+            <p class="phone-info">{{cd_phone}}</p>
+            <p>{{cd_email}}</p>
+            <b>Basic Info :</b>
+            <p>Age is {{cd_age}} years</p>
+            <div class="edit-delete">
+            <i class="fa fa-edit" ng-click="editContact()" data-toggle="modal" data-target="#newcontact-modal"></i>
+            <i class="fa fa-trash-o" ng-click="deleteContact()" ></i>
+            </div>
+          </section>
+         
+        </div>
+      </div>
+    </section>
+    <section class="newcontact-popup">
+      <div id="newcontact-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Add Details</h4>
+            </div>
+            <div class="modal-body">
+              <form class="newcontact-form" ng-submit="submitDetails()">
+                <input type="text" placeholder="Name" ng-model="contactname" ng-required="true">
+                </br>
+                <input type="text" placeholder="Phone No." ng-model="phone" ng-required="true" >
+                </br>
+                <input type="text" placeholder="E-Mail" ng-model="email" ng-required="true">
+                </br>
+                <input type="text" placeholder="Age" ng-model="age" ng-required="true">
+                </br> 
+                <input type="file"  file-upload class="image-file" />
+                </br>                     
+                <input type="submit" value="Done" class="submit-form" id="done">
+                <input type="button" value="Update" ng-click="updateContact()" class="update">                          
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="app-footer">
+      <i class="fa fa-user" data-toggle="modal" data-target="#newcontact-modal" ng-click="modelOpen()"> New Contact</i>
+    </footer> 
+  </body>
+</html>
